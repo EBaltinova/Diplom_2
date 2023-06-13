@@ -32,7 +32,6 @@ public class TestGettingOrdersList {
     @Test
     @DisplayName("Получение списка заказов авторизованного пользователя")
     public void testOrderListCanBeGettingIfUserLogin() {
-        ValidatableResponse response = userClient.create(user, USER_REGISTER);
         ValidatableResponse loginResponse = userClient.login(UserCredentials.from(user), USER_LOGIN);
         accessToken = loginResponse.extract().path("accessToken");
 
